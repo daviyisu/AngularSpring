@@ -1,5 +1,5 @@
 # AngularSpring
-Web application that uses Angular as front-end and Spring as back-end
+Small web application that uses Angular as front-end and Spring as back-end
 
 # Angularclient
 
