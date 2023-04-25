@@ -1,0 +1,54 @@
+# IntelliJ project files
+.idea/
+*.iml
+*.iws
+
+# Compiled class file
+*.class
+
+# Maven specific files #
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/
+
+# Logs and backups #
+*.log
+*.log.*
+*.bak
+*.swp
+*~
+
+# Linux project files
+*.o
+*.ko
+*.mod.*
+*.cmd
+.tmp_versions/
+Module.symvers
+modules.order
+
+# Compiled binaries
+bin/
+sbin/
+*.out
+*.iso
+*.img
+
+# Package files
+*.deb
+*.rpm
+*.snap
+*.gz
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.jar
+*.war
+*.ear
