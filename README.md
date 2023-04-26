@@ -1,5 +1,5 @@
 # AngularSpring
-Web application that uses Angular as front-end and Spring as back-end
+Small web application that uses Angular as front-end and Spring as back-end
 
 # Angularclient
 
@@ -14,3 +14,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Run `mvn spring-boot:run` for a dev server. Spring listens to port 8080
 
 You may need to run the front and the back in two separate IDE windows (at least that what I need to do in IntelliJ).
+
+## Use Docker
+
+Run `docker-compose up` in /docker directory to start the DB
