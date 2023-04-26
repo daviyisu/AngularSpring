@@ -18,6 +18,4 @@ public class BuildingwebappApplication {
 		SpringApplication.run(BuildingwebappApplication.class, args);
 	}
 
-	//comentariohyhtht
-
 }
