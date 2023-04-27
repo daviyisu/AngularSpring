@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Optional;
 
 @SpringBootTest
-class BuildingwebappApplicationTests {
+class BuildingwebappApplicationTests {    //TODO Use Mockito in tests
 
 	@Autowired
 	private UserRepository userRepository;
@@ -17,7 +17,7 @@ class BuildingwebappApplicationTests {
 	void contextLoads() {
 	}
 
-	Long createTestUser(){
+	Long createAndAddTestUser(){
 		User user = new User("Test", "test@example.com");
 		userRepository.save(user);
 		return user.getId();
@@ -25,7 +25,7 @@ class BuildingwebappApplicationTests {
 
 	@Test
 	void testUpdateUser(){
-		Long idTest = createTestUser();
+		Long idTest = createAndAddTestUser();
 		Optional<User> optional_user = userRepository.findById(idTest);
 		if (optional_user.isPresent()){
 			User userToUpdate = optional_user.get();
@@ -43,10 +43,18 @@ class BuildingwebappApplicationTests {
 
 	@Test
 	void testDeleteUser(){
-		Long idTest = createTestUser();
+		Long idTest = createAndAddTestUser();
 		Optional<User> optional_user = userRepository.findById(idTest);
 		optional_user.ifPresent(user -> userRepository.deleteById(user.getId()));
 		optional_user = userRepository.findById(idTest);
 		Assertions.assertTrue(optional_user.isEmpty());
+	}
+
+	@Test
+	void testAddUser(){
+		Long idTest = createAndAddTestUser();
+		Optional<User> optional_user = userRepository.findById(idTest);
+		Assertions.assertTrue(optional_user.isPresent());
+		userRepository.deleteById(optional_user.get().getId());
 	}
 }
