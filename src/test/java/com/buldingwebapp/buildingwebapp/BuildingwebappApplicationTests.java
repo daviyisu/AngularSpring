@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
@@ -57,4 +58,13 @@ class BuildingwebappApplicationTests {    //TODO Use Mockito in tests
 		Assertions.assertTrue(optional_user.isPresent());
 		userRepository.deleteById(optional_user.get().getId());
 	}
+
+	@Test
+	void testGetUsers(){
+		Long idTest = createAndAddTestUser();
+		List<User> users = userRepository.findAll();
+		Assertions.assertFalse(users.isEmpty());
+		userRepository.deleteById(idTest);
+	}
+
 }
